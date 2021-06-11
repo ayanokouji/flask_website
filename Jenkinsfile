@@ -14,7 +14,8 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        bat "python test_app.py"
+        sh "echo test"
+        sh "python D:\\repo\\flask_website\\test_app.py"        
       }
     }
   }
