@@ -14,14 +14,7 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        sh 'pytest --junitxml test-results.xml'
-      }
-    }
-    stage('Building image') {
-      steps{
-        script {
-          dockerImage = docker.build "dithicus/caltech_devops_project" + ":$BUILD_NUMBER"
-        }
+        sh 'pytest --junitxml test-results.xml' .\test_app.py
       }
     }
   }
