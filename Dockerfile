@@ -1,6 +1,8 @@
-FROM python:3.9.2
-COPY . /app
-WORKDIR /app
+FROM python:3
+COPY requirements.txt /opt/app/requirements.txt
+COPY . /opt/app
+WORKDIR /opt/app
+RUN apt-get -y update
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+EXPOSE 5000
+CMD ["flask", "run", "--host", "0.0.0.0"]
