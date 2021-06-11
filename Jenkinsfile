@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        sh 'pytest --junitxml test-results.xml' .\test_app.py
+        bat "pytest --junitxml test-results.xml .\test_app.py"
       }
     }
   }
