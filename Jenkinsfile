@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        sh 'python test_app.py'
+        sh 'pytest --junitxml test-results.xml'
       }
     }
     stage('Building image') {
